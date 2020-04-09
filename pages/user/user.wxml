@@ -1,0 +1,26 @@
+<template name="topview">
+    <view class="{{touched?'tca':'ca'}}" bindtouchstart="{{item.imgts}}" bindtouchend="{{item.imgte}}" bindtap="{{item.imgto}}">
+    <text> {{item.imagename}} </text>
+    <image src="{{item.imagesrc}}" mode="aspectFit" style="width: 30px; height: 30px; background-color: transparent;"></image>
+    </view>
+</template>
+<!--pages/message/message.wxml-->
+<view class="body">
+  <view class="top">
+    <image class="img" src='../../img/cm4.png'></image>
+    <view class="txt">
+      <text class="stuid"></text>
+      <text class="etc"></text>
+    </view>
+  </view>
+  <view class="cen">
+    <block wx:for="{{celldata}}"  wx:for-item="celldata">
+      <!-- <view class="bbottomview"> -->
+        <template is="topview" data="{{item:celldata}}"/>
+      <!-- </view> -->
+    </block>
+  </view>
+  <view class="bot">
+    
+  </view>
+</view>
